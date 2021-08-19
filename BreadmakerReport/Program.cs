@@ -18,7 +18,7 @@ namespace BreadmakerReport
 
             var BMList = BreadmakerDb.Breadmakers
 
-               // .Include(i => i.Reviews)
+                .Include(i => i.Reviews)
                 .AsEnumerable()
                 .Select(bmd => new {
                     Reviews = bmd.Reviews.Count,Average = Math.Round(bmd.Reviews.Average(s => s.stars), 2),
